@@ -1,0 +1,59 @@
+$black: #030303;
+$medium_brown: #7A746E;
+$white: #FFFFFF;
+$light_cream: #FFF7F0;
+$galactic_blue: #755CDE;
+$summer_yellow: #F6A560;
+$pink: #F39E9E;
+$light_red: #EB7565;
+$cyan: #61C4B7;
+$dark_purple: #552049;
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700&display=swap');
+
+@mixin button-bg($bg) {
+    background: $bg;
+}
+
+.btn {
+    width: 228px;
+    height: 56px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 28px;
+    color: $light_cream;
+    border-radius: 28px;
+    border: none;
+}
+
+.btn-black {
+    @include button-bg($black);
+
+    &:hover {
+        cursor: pointer;
+        background: $galactic_blue;
+    }
+}
+
+.btn-lightred {
+    @include button-bg($light_red);
+
+    &:hover {
+        cursor: pointer;
+        background: $summer_yellow;
+    }
+}
+
+// MOBILE //
+@media screen and (max-width: 767px) {
+    @mixin button-bg($bg) {
+        background: $bg;
+    }
+
+    .btn {
+        width: 176px;
+        height: 44px;
+        font-size: 14px;
+        line-height: 28px;
+    }
+}
